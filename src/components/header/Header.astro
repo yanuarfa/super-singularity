@@ -1,0 +1,14 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+}
+
+const { title, description, href } = Astro.props;
+---
+
+<div class="bg-slate-300 w-full h-14 flex justify-between items-center">
+  <p>{title}</p>
+  <p>{href}</p>
+</div>

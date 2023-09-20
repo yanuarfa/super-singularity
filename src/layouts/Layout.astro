@@ -25,7 +25,32 @@ const { title } = Astro.props;
     margin: 0 auto;
     max-width: 780px;
     padding: 0 10px;
-    background-color: rgb(47, 47, 47);
-    color: white;
+    /* background-color: rgb(47, 47, 47);
+    color: white; */
   }
 </style>
+
+<script is:inline>
+const theme = (() => {
+	if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+		return localStorage.getItem("theme");
+	}
+	if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+		return "dark";
+	}
+	return "light";
+})();
+
+if (theme === "light") {
+	document.documentElement.classList.remove("dark");
+} else {
+	document.documentElement.classList.add("dark");
+}
+window.localStorage.setItem("theme", theme);
+
+const themeToggler = document.querySelector("#themeToggler");
+
+themeToggler.addEventListener("click", function (e) {
+	console.log(e);
+});
+</script>

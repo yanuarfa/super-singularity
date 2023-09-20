@@ -8,7 +8,13 @@ interface Props {
 const { title, description, href } = Astro.props;
 ---
 
-<div class="bg-slate-300 w-full h-14 flex justify-between items-center">
+<div
+  class="bg-slate-300 dark:bg-slate-600 w-full h-14 flex justify-between items-center"
+>
   <p>{title}</p>
-  <p>{href}</p>
+  <div class="bg-red-500 p-4">
+    <button id="themeToggler">☀️</button>
+  </div>
 </div>
+
+<script></script>

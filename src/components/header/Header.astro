@@ -1,20 +1,38 @@
 ---
 interface Props {
   title: string;
-  description: string;
   href: string;
 }
 
-const { title, description, href } = Astro.props;
+const { title, href } = Astro.props;
 ---
 
-<div
-  class="bg-slate-300 dark:bg-slate-600 w-full h-14 flex justify-between items-center"
+<header
+  class="backdrop-filter backdrop-blur-lg w-full h-14 backdrop:bg-slate-500 z-50 sticky top-0"
 >
-  <p>{title}</p>
-  <div class="bg-red-500 p-4">
-    <button id="themeToggler">☀️</button>
+  <div class="flex m-auto justify-between items-center max-w-3xl">
+    <h2 class="text-xl font-bold"><a href="">{title}</a></h2>
+    <div class="bg-red-500 p-4">
+      <button id="themeToggler">☀️</button>
+    </div>
   </div>
-</div>
+</header>
 
-<script></script>
+<script>
+  const header = document.querySelector("header");
+  window.addEventListener("scroll", function () {
+    if (this.window.scrollY > 80) {
+      header?.classList.add(
+        "border-b-[0.6px]",
+        "dark:border-gray-500",
+        "border-base-200"
+      );
+    } else {
+      header?.classList.remove(
+        "border-b-[0.6px]",
+        "dark:border-gray-500",
+        "border-base-200"
+      );
+    }
+  });
+</script>

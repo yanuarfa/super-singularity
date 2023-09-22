@@ -1,4 +1,6 @@
 ---
+import ThemeButton from "@components/buttons/ThemeButton.astro";
+
 interface Props {
   title: string;
   href: string;
@@ -12,8 +14,8 @@ const { title, href } = Astro.props;
 >
   <div class="flex m-auto justify-between items-center max-w-3xl">
     <h2 class="text-xl font-bold"><a href="">{title}</a></h2>
-    <div class="bg-red-500 p-4">
-      <button id="themeToggler">☀️</button>
+    <div>
+      <ThemeButton title="Light" />
     </div>
   </div>
 </header>

@@ -7,9 +7,12 @@ import Modal from "@components/modals/Modal.astro";
 
 <Layout title="Super Singularity">
   <Header title="Super Singularity" href="/" />
-  <Modal bottom={0} right={0} padding={10} position="fixed">
+  <Modal styles="w-fit h-fit p-4 right-64 top-16">
+    <div class="flex items-center justify-center">
+      <div class="w-20 flex flex-row-reverse">❌</div>
+    </div>
     <div>
-      <h1>Hello World</h1>
+      <div class="w-full h-32 bg-slate-200">Hello</div>
     </div>
   </Modal>
   <main class="text-justify">

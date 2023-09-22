@@ -1,18 +1,18 @@
 ---
+import { twMerge } from "tailwind-merge";
+
 interface Props {
-  top?: number;
-  bottom?: number;
-  right?: number;
-  left?: number;
-  padding?: number;
-  position?: string;
+  styles: string;
 }
 
-const { top, bottom, right, left, padding, position } = Astro.props;
+const { styles } = Astro.props;
+
+const clases = twMerge(
+  "px-2 py-1 rounded-md bg-slate-200 dark:bg-slate-600 fixed z-50 shadow-md",
+  styles
+);
 ---
 
-<div
-  class=`${position} bg-slate-300 p-${padding} z-20 top-${top} bottom-${bottom} left-${left} right-${right} rounded-lg shadow-lg`
->
+<div class=`${clases}` id="smallModal">
   <slot />
 </div>

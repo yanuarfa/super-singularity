@@ -15,26 +15,26 @@ const { title, href } = Astro.props;
   <div class="flex m-auto justify-between items-center max-w-3xl">
     <h2 class="text-xl font-bold"><a href="">{title}</a></h2>
     <div>
-      <ThemeButton title="Light" />
+      <ThemeButton />
     </div>
   </div>
 </header>
 
-<script>
-  const header = document.querySelector("header");
-  window.addEventListener("scroll", function () {
-    if (this.window.scrollY > 80) {
-      header?.classList.add(
-        "border-b-[0.6px]",
-        "dark:border-gray-500",
-        "border-base-200"
-      );
-    } else {
-      header?.classList.remove(
-        "border-b-[0.6px]",
-        "dark:border-gray-500",
-        "border-base-200"
-      );
-    }
-  });
+<script is:inline>
+const header = document.querySelector("header");
+window.addEventListener("scroll", function () {
+  if (this.window.scrollY > 80) {
+    header?.classList.add(
+      "border-b-[0.6px]",
+      "dark:border-gray-500",
+      "border-base-200"
+    );
+  } else {
+    header?.classList.remove(
+      "border-b-[0.6px]",
+      "dark:border-gray-500",
+      "border-base-200"
+    );
+  }
+});
 </script>

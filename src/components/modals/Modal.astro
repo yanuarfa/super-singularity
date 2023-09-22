@@ -1,0 +1,18 @@
+---
+interface Props {
+  top?: number;
+  bottom?: number;
+  right?: number;
+  left?: number;
+  padding?: number;
+  position?: string;
+}
+
+const { top, bottom, right, left, padding, position } = Astro.props;
+---
+
+<div
+  class=`${position} bg-slate-300 p-${padding} z-20 top-${top} bottom-${bottom} left-${left} right-${right} rounded-lg shadow-lg`
+>
+  <slot />
+</div>

@@ -2,10 +2,16 @@
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/header/Header.astro";
 import Bottom from "@components/footer/Bottom.astro";
+import Modal from "@components/modals/Modal.astro";
 ---
 
 <Layout title="Super Singularity">
   <Header title="Super Singularity" href="/" />
+  <Modal bottom={0} right={0} padding={10} position="fixed">
+    <div>
+      <h1>Hello World</h1>
+    </div>
+  </Modal>
   <main class="text-justify">
     <p>Hello</p>
     <h1>

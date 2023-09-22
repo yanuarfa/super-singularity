@@ -1,9 +1,9 @@
 ---
 interface Props {
-  title: string;
+  title?: string;
 }
 
-const { title } = Astro.props;
+const { title = "Light" } = Astro.props;
 ---
 
-<button>Light</button>
+<button id="themeToggler">{title}</button>

@@ -1,0 +1,16 @@
+---
+import { twMerge } from "tailwind-merge";
+
+interface Props {
+  styles?: string;
+  title: string;
+  id: string;
+}
+const { styles, title, id } = Astro.props;
+
+const clases = twMerge("bg-blue-500 p-2", styles);
+---
+
+<button class={clases} id={id}>
+  {title}
+</button>

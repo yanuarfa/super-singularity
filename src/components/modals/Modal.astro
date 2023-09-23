@@ -3,16 +3,17 @@ import { twMerge } from "tailwind-merge";
 
 interface Props {
   styles: string;
+  id: string;
 }
 
-const { styles } = Astro.props;
+const { styles, id } = Astro.props;
 
 const clases = twMerge(
-  "px-2 py-1 rounded-md bg-slate-200 dark:bg-slate-600 fixed z-50 shadow-md",
+  "px-2 py-1 rounded-md bg-slate-200 dark:bg-slate-600 fixed z-50 shadow-md hidden",
   styles
 );
 ---
 
-<div class=`${clases}` id="smallModal">
+<div class={clases} id={id}>
   <slot />
 </div>

@@ -1,5 +1,6 @@
 ---
 import ThemeButton from "@components/buttons/ThemeButton.astro";
+import PrimaryButton from "@components/buttons/PrimaryButton.astro";
 
 interface Props {
   title: string;
@@ -10,12 +11,12 @@ const { title, href } = Astro.props;
 ---
 
 <header
-  class="backdrop-filter backdrop-blur-lg w-full h-14 backdrop:bg-slate-500 z-50 sticky top-0"
+  class="backdrop-filter backdrop-blur-lg w-full h-14 backdrop:bg-slate-500 z-50 sticky top-0 justify-center"
 >
   <div class="flex m-auto justify-between items-center max-w-3xl">
     <h2 class="text-xl font-bold"><a href="">{title}</a></h2>
     <div>
-      <ThemeButton />
+      <PrimaryButton styles="bg-red-500" id="btn-openmodal" title="Open" />
     </div>
   </div>
 </header>

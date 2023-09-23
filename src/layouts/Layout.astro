@@ -48,16 +48,32 @@ if (theme === "light") {
 }
 window.localStorage.setItem("theme", theme);
 
-const themeToggler = document.querySelector("#themeToggler");
+// const themeToggler = document.querySelector("#themeToggler");
 
-themeToggler.addEventListener("click", function () {
-  const currentTheme = window.localStorage.getItem("theme");
-  if (currentTheme === "dark") {
-    document.documentElement.classList.remove("dark");
-    return window.localStorage.setItem("theme", "light");
-  }
+// themeToggler.addEventListener("click", function () {
+//   const currentTheme = window.localStorage.getItem("theme");
+//   if (currentTheme === "dark") {
+//     document.documentElement.classList.remove("dark");
+//     return window.localStorage.setItem("theme", "light");
+//   }
 
-  document.documentElement.classList.add("dark");
-  window.localStorage.setItem("theme", "dark");
+//   document.documentElement.classList.add("dark");
+//   window.localStorage.setItem("theme", "dark");
+// });
+
+const menuToggler = document.querySelector("#btn-openmodal");
+const modal = document.querySelector("#right-modal");
+
+menuToggler.addEventListener("click", function () {
+  if (modal.classList.contains("hidden")) modal.classList.remove("hidden");
+  return;
 });
+
+window.onclick = function (e) {
+  console.log(e.target);
+  console.log(modal);
+  if (e.target === modal) {
+    modal.classList.add("hidden");
+  }
+};
 </script>
